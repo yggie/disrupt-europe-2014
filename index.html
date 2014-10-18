@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <style>
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="http://lorempixel.com/400/400" alt="">
+    <img class="comic" src="http://lorempixel.com/400/400" alt="">
+  </div>
+  <div>
+    <img src="http://api.randomuser.me/portraits/women/9.jpg" alt="">
+    <img class="comic" src="http://api.randomuser.me/portraits/women/9.jpg" alt="">
+  </div>
+  <div>
+    <img src="http://api.randomuser.me/portraits/men/9.jpg" alt="">
+    <img class="comic" src="http://api.randomuser.me/portraits/men/9.jpg" alt="">
+  </div>
+
+  <form id="filter-controls" action="" style="position: fixed; right: 0; top: 0; width: 300px; padding: 10px">
+    <h3>CSS3 Image Filter Controls</h3>
+
+    <div>
+      <input type="range" id="sepia" name="sepia" min="0" max="100" value="0">
+      <label for="sepia"></label>
+    </div>
+
+    <div>
+      <input type="range" id="grayscale" name="grayscale" min="0" max="100" value="0">
+      <label for="grayscale"></label>
+    </div>
+
+    <div>
+      <input type="range" id="saturate" name="saturate" min="0" max="2000" value="100">
+      <label for="saturate"></label>
+    </div>
+
+    <div>
+      <input type="range" id="hue-rotate" name="hue-rotate" min="0" max="360" value="0">
+      <label for="hue-rotate"></label>
+    </div>
+
+    <div>
+      <input type="range" id="invert" name="invert" min="0" max="100" value="0">
+      <label for="invert"></label>
+    </div>
+
+    <div>
+      <input type="range" id="opacity" name="opacity" min="0" max="100" value="100">
+      <label for="opacity"></label>
+    </div>
+
+    <div>
+      <input type="range" id="brightness" name="brightness" min="0" max="2000" value="100">
+      <label for="brightness"></label>
+    </div>
+
+    <div>
+      <input type="range" id="blur" name="blur" min="0" max="10" value="0">
+      <label for="blur"></label>
+    </div>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      var $imgs = $('img.comic'),
+          $inputs = $('#filter-controls input'),
+          filters = {},
+          units = {
+            sepia: '%',
+            grayscale: '%',
+            saturate: '%',
+            'hue-rotate': 'deg',
+            invert: '%',
+            opacity: '%',
+            brightness: '%',
+            blur: 'px',
+          };
+
+      function updateFilter(input) {
+        filters[input.attr('name')] = input.val();
+      }
+
+      function toCSS(filters) {
+        var str = '';
+        for (key in filters) {
+          str += key + '(' + filters[key] + units[key] + ') ';
+        }
+        return str;
+      }
+
+      $inputs.each(function (index, input) {
+        updateFilter($(input));
+      });
+
+      $inputs.on('change', function (event) {
+        var $this = $(this),
+            name = $this.attr('name');
+        $('label[for="' + name + '"]').text(name + ' (' + $this.val() + units[name] + ')');
+        updateFilter($this);
+
+        var css = toCSS(filters);
+        window.location.hash = encodeURIComponent(css);
+        $imgs.css('-webkit-filter', css);
+      });
+
+      if (window.location.hash) {
+        var str = decodeURIComponent(window.location.hash.replace('#', '')),
+            regexp = /(\w+)\((\d+)([^\)]*)\)/g,
+            match = regexp.exec(str);
+
+        while (match) {
+          $('input[name="' + match[1] + '"]').val(match[2]);
+          match = regexp.exec(str);
+        }
+      }
+
+      $inputs.change();
+    });
+  </script>
+</body>
+</html>
