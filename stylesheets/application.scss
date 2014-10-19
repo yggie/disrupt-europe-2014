@@ -1,8 +1,80 @@
-@import "foundation/scss/normalize";
-@import "foundation/scss/foundation";
+@import "components-font-awesome/scss/font-awesome";
+
+.scene-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+    margin: auto;
+  }
+}
+
+header.nav {
+  padding: 0;
+}
+
+#file-input {
+  display: none;
+}
 
 .scene-preview {
-  border: 1px solid red;
+  border: 3px solid black;
+  display: block;
+  margin: auto;
   width: 320px;
   height: 240px;
+}
+
+.container-fluid{
+  background: #EA3556;
+  height: 60px;
+  padding: 6px;
+}
+
+.nav a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav a:hover{
+  color: #e6e6e6;
+}
+
+.submit-button{
+  background-color: #53bc6c;
+  color: #FFFFFF;
+  border: none;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.submit-button:hover{
+  background-color: #339966;
+}
+
+.icon-space {
+  display: block;
+  margin: auto;
+  text-align: center;
+
+  .fa {
+    width: 20%;
+    cursor: pointer;
+  }
+}
+
+.nav li {
+  display: inline;
+  padding-top: 16px;
+}
+
+.footer{
+  background: #333333;
+  padding-bottom: 190px;
+  height: 60px;
+  padding-top: 6px;
 }

@@ -1,8 +1,26 @@
 <form action="" ng-submit="submit()">
   <canvas class="scene-preview"></canvas>
-  <input type="file" id="file-input">
-
-  <input type="text" id="text-input" ng-model="caption" placeholder="caption">
-
-  <input type="submit" value="Submit">
+  <div class="row-fluid">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <input class="form-control" type="text" id="text-input" ng-model="caption" placeholder="caption">
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="icon-space">
+      <i class="fa fa-adjust fa-2x"></i>
+      <i class="fa fa-comment fa-2x"></i>
+      <i class="fa fa-location-arrow fa-2x"></i>
+      <img style="width: 40px; height: 40px; -webkit-filter: contrast(5) grayscale(100%)" src="https://pbs.twimg.com/profile_images/378800000375497313/d42542a3db82d3e9ed1c935a6d08ba07_400x400.png" alt="">
+      <img style="width: 40px; height: 40px;" src="https://evernote.com/media/img/evernote_icon.png" alt="">
+    </div>
+  </div>
+  <div class="row-fluid">
+    <input type="file" id="file-input" accept="image/*">
+    <button type="button" class="btn btn-small file-upload pull-left">File Upload</button>
+    <button class="submit-button pull-right" type="submit">
+      <i class="fa fa-check fa-2x"></i>
+    </button>
+  </div>
 </form>

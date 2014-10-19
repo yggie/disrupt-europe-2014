@@ -4,6 +4,7 @@
   "homepage": "https://github.com/yggie/disrupt-europe-2014",
   "license": "MIT",
   "dependencies": {
-    "foundation": "zurb/bower-foundation#5.4.4"
+    "foundation": "zurb/bower-foundation#5.4.4",
+    "components-font-awesome": "~4.2.0"
   }
 }
