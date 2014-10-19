@@ -1,0 +1,31 @@
+{
+  "name": "disrupt-europe-2014",
+  "version": "0.0.0",
+  "description": "disrupt-europe-2014 ===================",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.8",
+    "gulp-angular-filesort": "^1.0.4",
+    "gulp-angular-templatecache": "^1.4.2",
+    "gulp-connect": "^2.0.6",
+    "gulp-inject": "^1.0.2",
+    "gulp-jshint": "^1.8.5",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "^1.2.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yggie/disrupt-europe-2014.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yggie/disrupt-europe-2014/issues"
+  },
+  "homepage": "https://github.com/yggie/disrupt-europe-2014"
+}

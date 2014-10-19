@@ -1,0 +1,9 @@
+{
+  "name": "disrupt-europe-2014",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yggie/disrupt-europe-2014",
+  "license": "MIT",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation#5.4.4"
+  }
+}

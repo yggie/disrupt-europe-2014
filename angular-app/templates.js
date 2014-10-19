@@ -1,0 +1,2 @@
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("comics/templates/comics-index.html","<section>\n  <ul>\n    <li ng-repeat=\"scene in scenes track by $index\">\n      <img ng-src=\"{{ scene.base64Image() }}\" alt=\"\">\n    </li>\n  </ul>\n</section>\n");
+$templateCache.put("comics/templates/new-comics.html","<form action=\"\" ng-submit=\"submit()\">\n  <canvas class=\"scene-preview\"></canvas>\n  <input type=\"file\" id=\"custom\">\n\n  <input type=\"submit\" value=\"Submit\">\n</form>\n");}]);

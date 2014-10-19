@@ -12,12 +12,28 @@
   </style>
 </head>
 <body>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="edge">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="9" />
+        <!-- <feColorMatrix in="SourceGraphic" type="matrix" -->
+        <!--   values="0 0 0 0 0 -->
+        <!--          1 1 1 1 0 -->
+        <!--          0 0 0 0 0 -->
+        <!--          0 0 0 1 0"> -->
+        <!-- <feConvolveMatrix in="SourceGraphic" order="3 3" edgeMode="duplicate" -->
+        <!--   preserveAlpha="false" targetX="0" targetY="0" -->
+        <!--   kernelMatrix="0 0 0 1 1 1 0 0 0" /> -->
+      </filter>
+    </defs>
+  </svg>
+
   <div>
     <img src="http://lorempixel.com/400/400" alt="">
     <img class="comic" src="http://lorempixel.com/400/400" alt="">
   </div>
   <div>
-    <img src="http://api.randomuser.me/portraits/women/9.jpg" alt="">
+    <img src="http://api.randomuser.me/portraits/women/9.jpg" alt="" style="-webkit-filter: url(#edge)">
     <img class="comic" src="http://api.randomuser.me/portraits/women/9.jpg" alt="">
   </div>
   <div>
