@@ -147,8 +147,8 @@ angular.module('comics')
       canvas.onmousemove = onDragBubble;
       canvas.ontouchmove = function (event) {
         onDragBubble({
-          x: event.targetTouches[0].clientX,
-          y: event.targetTouches[0].clientY,
+          x: event.targetTouches[0].pageX,
+          y: event.targetTouches[0].pageY,
         });
       };
     };
@@ -161,7 +161,10 @@ angular.module('comics')
     canvas.onmousedown = onTouchStart;
     canvas.ontouchstart = function (event) {
       console.log(event);
-      onTouchStart({ x: event.targetTouches[0].clientX, y: event.targetTouches[0].clientY });
+      onTouchStart({
+        x: event.targetTouches[0].pageX,
+        y: event.targetTouches[0].pageY,
+      });
     };
 
     canvas.onmouseup = onTouchEnd;
